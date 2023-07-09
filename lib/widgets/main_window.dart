@@ -3,6 +3,7 @@ import 'package:desktop_lifecycle/desktop_lifecycle.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vs_gui/widgets/window_buttons.dart';
+import 'package:window_manager/window_manager.dart';
 
 class MainWindow extends StatefulWidget {
   final String title;
@@ -13,9 +14,36 @@ class MainWindow extends StatefulWidget {
   MainWindowState createState() => MainWindowState();
 }
 
-class MainWindowState extends State<MainWindow> {
+class MainWindowState extends State<MainWindow> with WindowListener {
   final ValueListenable<bool> activeEvent = DesktopLifecycle.instance.isActive;
   bool isActive = true;
+  bool isMaximize = false;
+
+  @override
+  void initState() {
+    windowManager.addListener(this);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    windowManager.removeListener(this);
+    super.dispose();
+  }
+
+  @override
+  void onWindowMaximize() {
+    setState(() {
+      isMaximize = true;
+    });
+  }
+
+  @override
+  void onWindowUnmaximize() {
+    setState(() {
+      isMaximize = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,21 +87,46 @@ class MainWindowState extends State<MainWindow> {
                     height: 24,
                     width: double.infinity,
                     color: const Color(0xFF424242),
-                    child: const Row(children: [
-                      Padding(
-                          padding: EdgeInsets.all(3),
-                          child: Icon(
-                            Icons.chat_bubble_outline,
-                            size: 18,
-                            color: Color(0xFFE5E5E5),
-                          )),
-                      Padding(
-                          padding: EdgeInsets.all(2),
-                          child: Text(
-                            "Ready",
-                            style: TextStyle(
-                                color: Color(0xFFE5E5E5), fontSize: 12),
-                          )),
+                    child: Row(children: [
+                      const Expanded(
+                          child: Row(
+                        children: [
+                          Padding(
+                              padding: EdgeInsets.all(3),
+                              child: Icon(
+                                Icons.chat_bubble_outline,
+                                size: 18,
+                                color: Color(0xFFE5E5E5),
+                              )),
+                          Padding(
+                              padding: EdgeInsets.all(2),
+                              child: Text(
+                                "Ready",
+                                style: TextStyle(
+                                    color: Color(0xFFE5E5E5), fontSize: 12),
+                              )),
+                        ],
+                      )),
+                      Row(
+                        children: [
+                          const Padding(
+                              padding: EdgeInsets.only(right: 10),
+                              child: Icon(
+                                Icons.notifications_outlined,
+                                size: 18,
+                                color: Color(0xFFE5E5E5),
+                              )),
+                          !isMaximize
+                              ? const Padding(
+                                  padding: EdgeInsets.all(3),
+                                  child: Icon(
+                                    Icons.apps,
+                                    size: 18,
+                                    color: Color(0x33E5E5E5),
+                                  ))
+                              : Container()
+                        ],
+                      )
                     ]),
                   )
                 ]))));
