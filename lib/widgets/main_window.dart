@@ -113,6 +113,7 @@ class MainWindowState extends State<MainWindow> with WindowListener {
                         ],
                       )),
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           const Padding(
                               padding: EdgeInsets.only(right: 18),
