@@ -1,16 +1,24 @@
 # flutter_vs_gui
+VisualStudio like GUI made by Flutter.
 
-A new Flutter project.
+## active
+![image](https://github.com/LifeViolation/flutter_vs_gui/assets/128378329/dc0eb37b-c3b9-4182-9b41-1957ce9b25bf)
 
-## Getting Started
+## deactive
+![image](https://github.com/LifeViolation/flutter_vs_gui/assets/128378329/e328c866-70a1-4ab5-bb5f-42c2e36a14d6)
 
-This project is a starting point for a Flutter application.
+# Release
+Follow this : https://github.com/LifeViolation/flutter_vs_gui/releases
 
-A few resources to get you started if this is your first Flutter project:
+# License
+This repository is unlicense.  
+However, the following libraries are used  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- bitsdojo/bitsdojo_window(MIT)  
+https://github.com/bitsdojo/bitsdojo_window
+  
+- MixinNetwork/flutter-plugins(Apache 2.0)  
+https://github.com/MixinNetwork/flutter-plugins/tree/main/packages/desktop_lifecycle
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- dnfield/flutter_svg(MIT)  
+https://github.com/dnfield/flutter_svg/tree/master/packages/flutter_svg
