@@ -51,7 +51,16 @@ class MainWindowState extends State<MainWindow> {
                 child: Column(children: [
                   WindowTitleBarBox(
                     child: Row(children: [
-                      Expanded(child: MoveWindow()),
+                      Expanded(
+                          child: MoveWindow(
+                        child: Row(children: [
+                          Padding(
+                              padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                              child: Image.asset(isActive
+                                  ? "images/active_icon.png"
+                                  : "images/deactive_icon.png"))
+                        ]),
+                      )),
                       const WindowButtons()
                     ]),
                   )
