@@ -57,7 +57,7 @@ class App extends StatelessWidget {
                                 colorFilter: const ColorFilter.mode(
                                     Color(0x77FFFFFF), BlendMode.srcIn))),
                         Padding(
-                            padding: EdgeInsets.only(left: 10),
+                            padding: const EdgeInsets.only(left: 10),
                             child: GestureDetector(
                               onTap: () async {
                                 await launchInBrowser(
