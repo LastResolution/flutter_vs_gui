@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'util/url_launcher.dart';
 import 'widgets/window_buttons.dart';
 
 void main() {
@@ -55,28 +56,38 @@ class App extends StatelessWidget {
                             child: SvgPicture.asset("images/github-mark.svg",
                                 colorFilter: const ColorFilter.mode(
                                     Color(0x77FFFFFF), BlendMode.srcIn))),
-                        const Padding(
-                          padding: EdgeInsets.only(left: 10),
-                          child: Text(
-                            "LifeViolation",
-                            style: TextStyle(
-                                color: Color(0x77FFFFFF),
-                                fontSize: 24,
-                                decoration: TextDecoration.underline),
-                          ),
-                        ),
+                        Padding(
+                            padding: EdgeInsets.only(left: 10),
+                            child: GestureDetector(
+                              onTap: () async {
+                                await launchInBrowser(
+                                    "https://github.com/LifeViolation/");
+                              },
+                              child: const Text(
+                                "LifeViolation",
+                                style: TextStyle(
+                                    color: Color(0x77FFFFFF),
+                                    fontSize: 24,
+                                    decoration: TextDecoration.underline),
+                              ),
+                            )),
                       ],
                     )),
-                const Padding(
-                  padding: EdgeInsets.only(top: 10),
-                  child: Text(
-                    "LifeViolation/flutter-vs-gui",
-                    style: TextStyle(
-                        color: Color(0x77FFFFFF),
-                        fontSize: 18,
-                        decoration: TextDecoration.underline),
-                  ),
-                )
+                Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: GestureDetector(
+                      onTap: () async {
+                        await launchInBrowser(
+                            "https://github.com/LifeViolation/flutter_vs_gui");
+                      },
+                      child: const Text(
+                        "LifeViolation/flutter-vs-gui",
+                        style: TextStyle(
+                            color: Color(0x77FFFFFF),
+                            fontSize: 18,
+                            decoration: TextDecoration.underline),
+                      ),
+                    ))
               ]),
             )));
   }
