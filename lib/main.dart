@@ -33,6 +33,16 @@ class App extends StatelessWidget {
                   colorFilter: const ColorFilter.mode(
                       Color(0xFF151515), BlendMode.srcIn),
                 ),
+                const Padding(
+                    padding: EdgeInsets.all(20),
+                    child: FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Text(
+                          "This app is VisualStudio like GUI's demo.",
+                          style: TextStyle(
+                              color: Color(0x77FFFFFF),
+                              fontWeight: FontWeight.bold),
+                        )))
               ]),
             )));
   }
