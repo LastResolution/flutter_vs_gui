@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
                 child: Column(children: [
                   WindowTitleBarBox(
                     child: Row(children: [
-                      Expanded(child: Container()),
+                      Expanded(child: MoveWindow()),
                       const WindowButtons()
                     ]),
                   )
