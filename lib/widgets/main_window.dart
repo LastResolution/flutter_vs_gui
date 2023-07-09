@@ -110,7 +110,7 @@ class MainWindowState extends State<MainWindow> with WindowListener {
                       Row(
                         children: [
                           const Padding(
-                              padding: EdgeInsets.only(right: 10),
+                              padding: EdgeInsets.only(right: 18),
                               child: Icon(
                                 Icons.notifications_outlined,
                                 size: 18,
@@ -122,7 +122,7 @@ class MainWindowState extends State<MainWindow> with WindowListener {
                                   child: Icon(
                                     Icons.apps,
                                     size: 18,
-                                    color: Color(0x33E5E5E5),
+                                    color: Color(0x44E5E5E5),
                                   ))
                               : Container()
                         ],
