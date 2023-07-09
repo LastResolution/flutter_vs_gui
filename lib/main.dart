@@ -20,13 +20,19 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: MainWindow());
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: MainWindow(
+          title: 'Visual Studio Like GUI',
+          child: Container(),
+        ));
   }
 }
 
 class MainWindow extends StatefulWidget {
-  const MainWindow({super.key});
+  final String title;
+  final Widget child;
+  const MainWindow({super.key, required this.title, required this.child});
 
   @override
   MainWindowState createState() => MainWindowState();
@@ -60,10 +66,10 @@ class MainWindowState extends State<MainWindow> {
                               child: Image.asset(isActive
                                   ? "images/active_icon.png"
                                   : "images/deactive_icon.png")),
-                          const Flexible(
+                          Flexible(
                               child: Text(
-                            "Visual Studio like GUI",
-                            style: TextStyle(color: Color(0xFFd6d6d6)),
+                            widget.title,
+                            style: const TextStyle(color: Color(0xFFd6d6d6)),
                             overflow: TextOverflow.fade,
                             maxLines: 1,
                             softWrap: false,
@@ -72,7 +78,8 @@ class MainWindowState extends State<MainWindow> {
                       )),
                       const WindowButtons()
                     ]),
-                  )
+                  ),
+                  widget.child
                 ]))));
   }
 }
