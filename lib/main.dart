@@ -2,6 +2,7 @@ import 'package:desktop_lifecycle/desktop_lifecycle.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'widgets/window_buttons.dart';
 
@@ -10,7 +11,7 @@ void main() {
   doWhenWindowReady(() {
     final win = appWindow;
     win.title = "Visual Studio Like GUI";
-    win.minSize = const Size(300, 200);
+    win.minSize = const Size(300, 500);
     win.show();
   });
 }
@@ -23,9 +24,17 @@ class App extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: MainWindow(
-          title: 'Visual Studio Like GUI',
-          child: Container(),
-        ));
+            title: 'Visual Studio Like GUI',
+            child: Container(
+              alignment: Alignment.center,
+              child: Column(mainAxisSize: MainAxisSize.min, children: [
+                SvgPicture.asset(
+                  "images/vs_logo_large.svg",
+                  colorFilter: const ColorFilter.mode(
+                      Color(0xFF151515), BlendMode.srcIn),
+                ),
+              ]),
+            )));
   }
 }
 
@@ -79,7 +88,7 @@ class MainWindowState extends State<MainWindow> {
                       const WindowButtons()
                     ]),
                   ),
-                  widget.child
+                  Expanded(child: widget.child)
                 ]))));
   }
 }
