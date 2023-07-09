@@ -54,7 +54,28 @@ class MainWindowState extends State<MainWindow> {
                       const WindowButtons()
                     ]),
                   ),
-                  Expanded(child: widget.child)
+                  Expanded(child: widget.child),
+                  Container(
+                    height: 24,
+                    width: double.infinity,
+                    color: const Color(0xFF424242),
+                    child: const Row(children: [
+                      Padding(
+                          padding: EdgeInsets.all(3),
+                          child: Icon(
+                            Icons.chat_bubble_outline,
+                            size: 18,
+                            color: Color(0xFFE5E5E5),
+                          )),
+                      Padding(
+                          padding: EdgeInsets.all(2),
+                          child: Text(
+                            "Ready",
+                            style: TextStyle(
+                                color: Color(0xFFE5E5E5), fontSize: 12),
+                          )),
+                    ]),
+                  )
                 ]))));
   }
 }
