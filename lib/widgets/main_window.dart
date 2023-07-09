@@ -7,8 +7,13 @@ import 'package:window_manager/window_manager.dart';
 
 class MainWindow extends StatefulWidget {
   final String title;
+  final bool visibleStatusBar;
   final Widget child;
-  const MainWindow({super.key, required this.title, required this.child});
+  const MainWindow(
+      {super.key,
+      required this.title,
+      required this.child,
+      required this.visibleStatusBar});
 
   @override
   MainWindowState createState() => MainWindowState();

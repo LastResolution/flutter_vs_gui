@@ -27,6 +27,7 @@ class App extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: MainWindow(
             title: 'VisualStudio Like GUI',
+            visibleStatusBar: true,
             child: Container(
               alignment: Alignment.center,
               child: Column(mainAxisSize: MainAxisSize.min, children: [
