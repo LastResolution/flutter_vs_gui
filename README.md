@@ -22,3 +22,6 @@ https://github.com/MixinNetwork/flutter-plugins/tree/main/packages/desktop_lifec
 
 - dnfield/flutter_svg(MIT)  
 https://github.com/dnfield/flutter_svg/tree/master/packages/flutter_svg
+
+- leanflutter/window_manager(MIT)  
+https://github.com/leanflutter/window_manager
