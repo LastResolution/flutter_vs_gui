@@ -10,6 +10,7 @@ void main() {
   doWhenWindowReady(() {
     final win = appWindow;
     win.title = "Visual Studio Like GUI";
+    win.minSize = const Size(300, 200);
     win.show();
   });
 }
@@ -58,7 +59,15 @@ class MainWindowState extends State<MainWindow> {
                               padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
                               child: Image.asset(isActive
                                   ? "images/active_icon.png"
-                                  : "images/deactive_icon.png"))
+                                  : "images/deactive_icon.png")),
+                          const Flexible(
+                              child: Text(
+                            "Visual Studio like GUI",
+                            style: TextStyle(color: Color(0xFFd6d6d6)),
+                            overflow: TextOverflow.fade,
+                            maxLines: 1,
+                            softWrap: false,
+                          ))
                         ]),
                       )),
                       const WindowButtons()
