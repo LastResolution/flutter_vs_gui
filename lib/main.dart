@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_vs_gui/widgets/main_window.dart';
+import 'package:window_manager/window_manager.dart';
 
 import 'util/url_launcher.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await windowManager.ensureInitialized();
   runApp(const App());
   doWhenWindowReady(() {
     final win = appWindow;
