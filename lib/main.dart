@@ -42,7 +42,41 @@ class App extends StatelessWidget {
                           style: TextStyle(
                               color: Color(0x77FFFFFF),
                               fontWeight: FontWeight.bold),
-                        )))
+                        ))),
+                Container(
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                            width: 30,
+                            height: 30,
+                            child: SvgPicture.asset("images/github-mark.svg",
+                                colorFilter: const ColorFilter.mode(
+                                    Color(0x77FFFFFF), BlendMode.srcIn))),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 10),
+                          child: Text(
+                            "LifeViolation",
+                            style: TextStyle(
+                                color: Color(0x77FFFFFF),
+                                fontSize: 24,
+                                decoration: TextDecoration.underline),
+                          ),
+                        ),
+                      ],
+                    )),
+                const Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Text(
+                    "LifeViolation/flutter-vs-gui",
+                    style: TextStyle(
+                        color: Color(0x77FFFFFF),
+                        fontSize: 18,
+                        decoration: TextDecoration.underline),
+                  ),
+                )
               ]),
             )));
   }
