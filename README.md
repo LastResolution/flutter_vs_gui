@@ -2,10 +2,10 @@
 VisualStudio like GUI made by Flutter.
 
 ## active
-![image](https://github.com/LifeViolation/flutter_vs_gui/assets/128378329/dc0eb37b-c3b9-4182-9b41-1957ce9b25bf)
+![image](https://github.com/LifeViolation/flutter_vs_gui/assets/128378329/7ee2f639-1fac-431f-a15a-137c7b779f40)
 
 ## deactive
-![image](https://github.com/LifeViolation/flutter_vs_gui/assets/128378329/e328c866-70a1-4ab5-bb5f-42c2e36a14d6)
+![image](https://github.com/LifeViolation/flutter_vs_gui/assets/128378329/7d23b50e-b105-4e6d-9488-cddbfefe1d72)
 
 # Release
 Follow this : https://github.com/LifeViolation/flutter_vs_gui/releases
@@ -22,3 +22,6 @@ https://github.com/MixinNetwork/flutter-plugins/tree/main/packages/desktop_lifec
 
 - dnfield/flutter_svg(MIT)  
 https://github.com/dnfield/flutter_svg/tree/master/packages/flutter_svg
+
+- leanflutter/window_manager(MIT)  
+https://github.com/leanflutter/window_manager
