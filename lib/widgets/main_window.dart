@@ -70,18 +70,21 @@ class MainWindowState extends State<MainWindow> with WindowListener {
                           child: MoveWindow(
                         child: Row(children: [
                           Padding(
-                              padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                              padding: const EdgeInsets.fromLTRB(10, 5, 0, 5),
                               child: Image.asset(isActive
                                   ? "images/active_icon.png"
                                   : "images/deactive_icon.png")),
-                          Flexible(
-                              child: Text(
-                            widget.title,
-                            style: const TextStyle(color: Color(0xFFd6d6d6)),
-                            overflow: TextOverflow.fade,
-                            maxLines: 1,
-                            softWrap: false,
-                          ))
+                          Padding(
+                            padding: EdgeInsets.only(left: 10),
+                            child: Flexible(
+                                child: Text(
+                              widget.title,
+                              style: const TextStyle(color: Color(0xFFd6d6d6)),
+                              overflow: TextOverflow.fade,
+                              maxLines: 1,
+                              softWrap: false,
+                            )),
+                          )
                         ]),
                       )),
                       const WindowButtons()
