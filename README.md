@@ -1,12 +1,6 @@
 # flutter_vs_gui
 VisualStudio like GUI made by Flutter.
 
-## active
-![image](https://github.com/LifeViolation/flutter_vs_gui/assets/128378329/7ee2f639-1fac-431f-a15a-137c7b779f40)
-
-## deactive
-![image](https://github.com/LifeViolation/flutter_vs_gui/assets/128378329/7d23b50e-b105-4e6d-9488-cddbfefe1d72)
-
 # Release
 Follow this : https://github.com/LifeViolation/flutter_vs_gui/releases
 
